@@ -2,9 +2,20 @@ package unomed.negocios;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.utio.List;
+import java.util.List;
 
-//faltam varios imports entidades, exceptions e odc
+import unomed.entidades.Clinicas;
+import unomed.entidades.odc.ClinicasShort;
+import unomed.entidades.odc.PlanoDeSaudeShort;
+import unomed.entidades.odc.ProfissionalDeSaudeShort;
+import unomed.exception.ClinicasExistenteException;
+import unomed.exception.ClinicasInexistenteException;
+import unomed.exception.PlanoDeSaudeExistenteException;
+import unomed.exception.PlanoDeSaudeInexistenteException;
+import unomed.exception.ProfissionalDeSaudeExistenteException;
+import unomed.exception.ProfissionalDeSaudeInexistenteException;
+
+
 
 public interface Fachada extends Serializable {
 
@@ -20,7 +31,7 @@ public interface Fachada extends Serializable {
 	
 	public ClinicasShort findByTelefone(String telefone) throws ClinicasInexistenteException;
 	
-	public List<ClinicasLong> findAllClinicas();
+	public List<Clinicas> findAllClinicas();
 	
 	// PLANO DE SAUDE
 	
@@ -32,7 +43,7 @@ public interface Fachada extends Serializable {
 	
 	public PlanoDeSaudeShort findByNome(String nome) throws PlanoDeSaudeInexistenteException;
 	
-	public PlanoDeSaudeShort findByEmpresa(Empresa empresa) throws PlanoDeSaudeInexistenteException;
+	public PlanoDeSaudeShort findByEmpresa(Clinicas empresa) throws PlanoDeSaudeInexistenteException;
 	
 	public List<PlanoDeSaudeShort> findAllPlanoDeSaude();
 	
@@ -44,13 +55,18 @@ public interface Fachada extends Serializable {
 	
 	public void removerProfissionalDeSaude(Long id) throws ProfissionalDeSaudeInexistenteException;
 	
-	public ProfissionalDeSaudeShort findByCrm(String crm) ProfissionalDeSaudeInexistenteException;
+	public ProfissionalDeSaudeShort findByCrm(String crm) throws ProfissionalDeSaudeInexistenteException;
 	
-	public ProfissionalDeSaudeShort findByEspecialidade(String especialidade) ProfissionalDeSaudeInexistenteException;
+	public ProfissionalDeSaudeShort findByEspecialidade(String especialidade) throws ProfissionalDeSaudeInexistenteException;
 	
 	public List<ProfissionalDeSaudeShort> findAllProfissionalDeSaude();
 	
 	
 	// pode implementar mais? 
+	/*
+	 * poder, pode!! mas temos q implementar todos métodos criados, e temos
+	 * que analisar as necessidades de sua utilidade no sistema!!
+	 */
+	
 	
 }

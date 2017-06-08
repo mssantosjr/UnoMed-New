@@ -142,6 +142,9 @@ public abstract class ClinicasPai {
 		result = prime * result + ((tipoAcesso == null) ? 0 : tipoAcesso.hashCode());
 		result = prime * result + ((planoSaude == null) ? 0 : planoSaude.hashCode());
 		
+		//Adicionar o retorno correto
+		return 0;
+		
 	}
 	
 	

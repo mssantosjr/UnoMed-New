@@ -5,8 +5,6 @@ import java.util.Date;
 import java.util.List;
 
 
-
-
 public class Clinicas implements Serializable {
 	
 	//todos estao com o mesmo uid TESTE ATUALIZACAO GIT
@@ -17,8 +15,9 @@ public class Clinicas implements Serializable {
 	private String nome;
 	private String endereco;
 	private String telefone;
-	private String tipoAcesso; //cliente ou usuário
+	private String tipoAcesso; //cliente ou usuário // Não eh cliente ou adm não?
 	private String planoSaude;
+	private String email;
 	
 	public Clinicas(){
 		
@@ -86,9 +85,13 @@ public class Clinicas implements Serializable {
 	public void setPlanoSaude(String planoSaude) {
 		this.planoSaude = planoSaude;
 	}
-	
-	
-	
-	
-	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }

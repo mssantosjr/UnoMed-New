@@ -50,7 +50,7 @@ public abstract class ProfissionalDeSaudePai {
 		List<ProfissionalDeSaudePai> profissionalDeSaudePai = new ArrayList<ProfissionalDeSaudePai>();
 		if(profissionalDeSaudez != null){
 			for(ProfissionalDeSaude profissionalDeSaude:profissionalDeSaudez){
-				profissionalDeSaudePai.add(ProfissionalDeSaudePai.toProfissionalDeSaudePai(profissionalDeSaudez));
+				profissionalDeSaudePai.add((ProfissionalDeSaudePai) ProfissionalDeSaudePai.toProfissionalDeSaudePai(profissionalDeSaudez));
 			}
 		}
 		return profissionalDeSaudePai;

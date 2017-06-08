@@ -1,24 +1,26 @@
 package unomed.entidades.odc;
 
 import java.util.ArrayList;
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 
 import unomed.entidades.Clinicas;
+import unomed.entidades.PlanoDeSaude;
+import unomed.entidades.odc.PlanoDeSaudeShort;
 
 
 public class ClinicasLong extends ClinicasPai{
 
-	private PlanoSaudeShort planoSaudeShort;
+	private PlanoDeSaudeShort planoSaudeShort;
 	private List<AgendarConsultaShort> agendarConsulta;
 	
 	public ClinicasLong(){
 		
 	}
 	
-	public ClinicasLong(PlanoSaudeSHort planoSaudeShort, List<AgendarConsultaShort> agendarConsulta){
+	public ClinicasLong(PlanoDeSaudeShort planoSaudeShort, List<AgendarConsultaShort> agendarConsulta){
 		this.planoSaudeShort = planoSaudeShort;
-		this.agendarConsulta = agendarConsultaShort;
+		this.agendarConsulta = agendarConsulta;
 	}
 	
 	public ClinicasLong(Long id, String cpf, String nome, String endereco, String telefone,
@@ -57,11 +59,11 @@ public class ClinicasLong extends ClinicasPai{
 	}
 	
 
-public PlanoSaude getPlanoSaudeShort(){
-	return planoSaudeShort;
+public PlanoDeSaude getPlanoSaudeShort(){
+	return PlanoDeSaudeShort.toPlanoDeSaude(planoSaudeShort);
 }
 
-public void setPlanoSaudeShort(PlanoSaudeShort planoSaudeShort){
+public void setPlanoSaudeShort(PlanoDeSaudeShort planoSaudeShort){
 	this.planoSaudeShort = planoSaudeShort;
 }
 
@@ -69,14 +71,9 @@ public List<AgendarConsultaShort> getAgendarConsulta(){
 	return agendarConsulta;
 }
 
-public void setAgendarConsulta(Lost<AgendarConsultaShort> agendarConsulta){
+public void setAgendarConsulta(List<AgendarConsultaShort> agendarConsulta){
 	this.agendarConsulta = agendarConsulta;
 }
-
-
-//// booleana que não sei pra que serve 
-
-
 
 
 
