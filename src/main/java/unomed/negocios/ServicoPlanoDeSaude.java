@@ -3,6 +3,8 @@ package unomed.negocios;
 import java.io.Serializable;
 
 
+import java.util.List;
+
 import unomed.entidades.odc.PlanoDeSaudeShort;
 import unomed.entidades.odc.PlanoDeSaudeLong;
 import unomed.exception.PlanoDeSaudeExistenteException;

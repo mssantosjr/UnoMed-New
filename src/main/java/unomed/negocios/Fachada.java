@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import unomed.entidades.Clinicas;
+import unomed.entidades.odc.ClinicasLong;
 import unomed.entidades.odc.ClinicasShort;
 import unomed.entidades.odc.PlanoDeSaudeShort;
 import unomed.entidades.odc.ProfissionalDeSaudeShort;
@@ -20,7 +21,7 @@ import unomed.exception.ProfissionalDeSaudeInexistenteException;
 public interface Fachada extends Serializable {
 
 	// CLINICAS
-	
+
 	public void adicionarClinicas(ClinicasShort c) throws ClinicasExistenteException;
 	
 	public void atualizarClinicas(ClinicasShort c) throws ClinicasInexistenteException;
@@ -29,7 +30,7 @@ public interface Fachada extends Serializable {
 	
 	public ClinicasShort findByCpf(String cpf) throws ClinicasInexistenteException;
 	
-	public ClinicasShort findByTelefone(String telefone) throws ClinicasInexistenteException;
+	public ClinicasLong findByTelefone(String telefone) throws ClinicasInexistenteException;
 	
 	public List<Clinicas> findAllClinicas();
 	

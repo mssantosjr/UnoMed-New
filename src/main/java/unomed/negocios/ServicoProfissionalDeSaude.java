@@ -21,12 +21,10 @@ public interface ServicoProfissionalDeSaude extends Serializable {
 	 * @throws ProfissionalDeSaudeExistenteException
 	 */
 	
-	public void adicionarProfissionalDeSaude(ProfissionalDeSaudeShort p) throws ProfissionalDeSaudeException;
+	public void adicionarProfissionalDeSaude(ProfissionalDeSaudeShort p) throws ProfissionalDeSaudeExistenteException;
 	
+	public void atualizarProfissionalDeSaude(ProfissionalDeSaudeLong pl) throws ProfissionalDeSaudeExistenteException;
 	
-	public void atualizarProfissionalDeSaude
-	
-	
-	
+	public void removerProfissionalDeSaude(ProfissionalDeSaudeShort p) throws ProfissionalDeSaudeInexistenteException;
 
 }

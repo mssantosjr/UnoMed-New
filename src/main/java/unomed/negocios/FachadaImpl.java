@@ -3,13 +3,23 @@ package unomed.negocios;
 import java.util.Date;
 import java.util.List;
 
+import unomed.entidades.Clinicas;
 import unomed.entidades.PlanoDeSaude;
+import unomed.entidades.odc.ClinicasLong;
+import unomed.entidades.odc.ClinicasShort;
+import unomed.entidades.odc.PlanoDeSaudeShort;
+import unomed.entidades.odc.ProfissionalDeSaudeLong;
+import unomed.entidades.odc.ProfissionalDeSaudeShort;
+import unomed.exception.ClinicasExistenteException;
+import unomed.exception.ClinicasInexistenteException;
+import unomed.exception.PlanoDeSaudeExistenteException;
+import unomed.exception.PlanoDeSaudeInexistenteException;
+import unomed.exception.ProfissionalDeSaudeExistenteException;
+import unomed.exception.ProfissionalDeSaudeInexistenteException;
 
-// tem mais coisas aqui spring
-
-
-// export de entidades, exceptions e odc
-
+/*
+ * Revisar a nomenclatura em todos os comments e o fluxo
+ */
 
 public class FachadaImpl implements Fachada {
 	
@@ -28,8 +38,8 @@ public class FachadaImpl implements Fachada {
 		this.clinicasServ.adicionarClinicas(c);
 	}
 
-	public void atualizarClinicas(ClinicasShort c) throws CLinicasInexistenteException{
-		this.clinicasServ.atualizarClinicas(c);
+	public void atualizarClinicas(ClinicasShort c) throws ClinicasInexistenteException{
+			//this.clinicasServ.atualizarClinicas(c);
 	}
 	
 	public void removerClinicas(Long id) throws ClinicasInexistenteException{
@@ -40,12 +50,12 @@ public class FachadaImpl implements Fachada {
 		return this.clinicasServ.findByCpf(cpf);
 	}
 	
-	public ClinicasShort findByTelefone(String telefone) throws ClinicasInexistenteException{
+	public ClinicasLong findByTelefone(String telefone) throws ClinicasInexistenteException{
 		return this.clinicasServ.findByTelefone(telefone);
 	}
 	
-	public List<ClinicasLong> findAllClinicas(){
-		return this.clinicasServ.findAll();
+	public List<Clinicas> findAllClinicas(){
+		return null;// this.clinicasServ.findAll();
 	}
 	
 	// PROFISSIONAL DE SAUDE
@@ -55,62 +65,60 @@ public class FachadaImpl implements Fachada {
 	}
 	
 	public void atualizarProfissionalDeSaude(ProfissionalDeSaudeShort pfs) throws ProfissionalDeSaudeInexistenteException{
-		this.profissionalDeSaudeServ.atualizarProfissionalDeSaude(pfs);
+		//this.profissionalDeSaudeServ.atualizarProfissionalDeSaude(pfs);
 	}
 	
 	public void removerProfissionalDeSaude(Long id) throws ProfissionalDeSaudeInexistenteException{
-		this.profissionalDeSaudeServ.removerProfissionalDeSaude(id);
+		//this.profissionalDeSaudeServ.removerProfissionalDeSaude(id);
 	}
 	
 	public ProfissionalDeSaudeShort findByCrm(String crm) throws ProfissionalDeSaudeInexistenteException{
-		return this.profissionalDeSaudeServ.findByCrm(crm);
+		return null;//this.profissionalDeSaudeServ.findByCrm(crm);
 	}
 	
 	public ProfissionalDeSaudeShort findByEspecialidade(String especialidade) throws ProfissionalDeSaudeInexistenteException{
-		return this.profissionalDeSaudeServ.findByEspecialidade(especialidade);
+		return null;//this.profissionalDeSaudeServ.findByEspecialidade(especialidade);
 	}
 	
 	public List<ProfissionalDeSaudeLong> findProfissionalDeSaude(){
-		return this.profissionalDeSaudeServ.findAll();
+		return null;//this.profissionalDeSaudeServ.findAll();
 	}
 	
 	// PLANO DE SAUDE
-	
 	
 	public void adicionarPlanoDeSaude(PlanoDeSaudeShort ps) throws PlanoDeSaudeExistenteException{
 		this.planoDeSaudeServ.adicionarPlanoDeSaude(ps);
 	}
 	
 	public void atualizarPlanoDeSaude(PlanoDeSaudeShort ps) throws PlanoDeSaudeInexistenteException{
-		this.planoDeSaudeServ.atualizarPlanoDeSaude(ps);
+		//this.planoDeSaudeServ.atualizarPlanoDeSaude(ps);
 	}
 	
 	public void removerPlanoDeSaude(Long id) throws PlanoDeSaudeInexistenteException{
-		this.planoDeSaudeServ.removePlanoDeSaude(id);
+		//this.planoDeSaudeServ.removePlanoDeSaude(id);
 	}
 	
 	public PlanoDeSaudeShort findByNome(String nome) throws PlanoDeSaudeInexistenteException{
-		return this.planoDeSaudeServ.findByNome(nome);
+		return null;// this.planoDeSaudeServ.findByNome(nome);
 	}
 	
 	public PlanoDeSaudeShort findByEmpresa(String empresa) throws PlanoDeSaudeInexistenteException{
-		return this.planoDeSaudeServ.findByEmpresa(empresa);
+		return null;//this.planoDeSaudeServ.findByEmpresa(empresa);
 	}
 	
 	public List<PlanoDeSaudeShort> findAllPlanoDeSaude(){
-		return this.planoDeSaudeServ.findAll();
+		return null;//this.planoDeSaudeServ.findAll();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public PlanoDeSaudeShort findByEmpresa(Clinicas empresa)
+			throws PlanoDeSaudeInexistenteException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<ProfissionalDeSaudeShort> findAllProfissionalDeSaude() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
