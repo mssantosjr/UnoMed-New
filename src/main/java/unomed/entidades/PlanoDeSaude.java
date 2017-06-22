@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
-
+@Entity
 public class PlanoDeSaude implements Serializable {
 	
 	private static final long serialVersionUID = -8277445364627347945L;
 	
+	@Id
 	private Long id;
 	private String nome;
 	private String empresa;

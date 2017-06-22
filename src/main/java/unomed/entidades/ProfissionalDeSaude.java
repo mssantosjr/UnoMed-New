@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+
+import javax.persistence.Entity;
 //import javax.persistence.Entidades;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,10 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+@Entity
 public class ProfissionalDeSaude implements Serializable {
 	
 	private static final long serialVersionUID = -8277445364627347945L;
 	
+	@Id
 	private Long id;
 	private String crm;
 	private String nome;

@@ -4,12 +4,19 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+
+@Entity
 public class Clinicas implements Serializable {
 	
 	//todos estao com o mesmo uid TESTE ATUALIZACAO GIT
 	private static final long serialVersionUID = -8277445364627347945L;
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String cpf;
 	private String nome;
